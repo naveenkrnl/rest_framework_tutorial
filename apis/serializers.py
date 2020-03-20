@@ -1,12 +1,8 @@
 #import serializer from rest_framework
 from rest_framework import serializers
 
-# import model from models.py
-from .models import GeeksModel
-
-# Create a model serializer 
-class GeeksSerializer(serializers.HyperlinkedModelSerializer):
-    # specify model and fields
-    class Meta:
-        model = GeeksModel
-        fields = ('title', 'description')
+# create a serializer
+class CommentSerializer(serializers.Serializer):
+    # intialize fields
+    field_1 = serializers.BooleanField()
+    field_2 = serializers.NullBooleanField()

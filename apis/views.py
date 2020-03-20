@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 
 # import local data
-from .serializers import GeeksSerializer
+from .serializers import CommentSerializer
 from .models import GeeksModel
 
 # create a viewset
@@ -11,4 +11,4 @@ class GeeksViewSet(viewsets.ModelViewSet):
     queryset = GeeksModel.objects.all()
     
     # specify serializer to be used
-    serializer_class = GeeksSerializer
+    serializer_class = CommentSerializer
