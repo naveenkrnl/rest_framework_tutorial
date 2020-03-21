@@ -10,6 +10,6 @@ class Geeks(object):
 # create a serializer
 class GeeksSerializer(serializers.Serializer):
     # intialize fields
-    name = serializers.CharField()
+    name = serializers.CharField(max_length = 200)
     email = serializers.EmailField()
     phone_number = serializers.RegexField("[0-9]{10}")
