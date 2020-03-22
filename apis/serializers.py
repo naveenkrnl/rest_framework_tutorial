@@ -2,10 +2,16 @@
 from rest_framework import serializers
 
 class Geeks(object):
-    def __init__(self, ip):
-        self.ip = ip
+    def __init__(self, date_time, date, time, duration):
+        self.date_time = date_time
+        self.date = date
+        self.time = time
+        self.duration = duration
 
 # create a serializer
 class GeeksSerializer(serializers.Serializer):
     # intialize fields
-    ip = serializers.IPAddressField()
+    date_time = serializers.DateTimeField()
+    date = serializers.DateField()
+    time = serializers.TimeField()
+    duration = serializers.DurationField()
