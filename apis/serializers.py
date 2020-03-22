@@ -2,23 +2,12 @@
 from rest_framework import serializers
 
 class Geeks(object):
-    def __init__(self, choices, multiplechoices):
-        self.choices = choices
-        self.multiplechoices = multiplechoices
-
-# create a tuple
-GEEKS_CHOICES =( 
-    ("1", "One"), 
-    ("2", "Two"), 
-    ("3", "Three"), 
-    ("4", "Four"), 
-    ("5", "Five"), 
-)
+    def __init__(self, files, image):
+        self.files = files
+        self.image = image
 
 # create a serializer
 class GeeksSerializer(serializers.Serializer):
     # intialize fields
-    choices = serializers.ChoiceField(
-                        choices = GEEKS_CHOICES)
-    multiplechoices = serializers.MultipleChoiceField(
-                        choices = GEEKS_CHOICES)
+    files = serializers.FileField()
+    image = serializers.ImageField()
