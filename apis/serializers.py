@@ -2,12 +2,12 @@
 from rest_framework import serializers
 
 class Geeks(object):
-    def __init__(self, files, image):
-        self.files = files
-        self.image = image
+    def __init__(self, name,hidden):
+        self.name = name
+        self.hidden = hidden
 
 # create a serializer
 class GeeksSerializer(serializers.Serializer):
     # intialize fields
-    files = serializers.FileField()
-    image = serializers.ImageField()
+    name = serializers.CharField()
+    hidden = serializers.HiddenField(default = 1)
